@@ -26,7 +26,7 @@ python -m venv venv
 ```
 2. Активируйте виртуальное окружение
 ```
-venv/Skripts/activate
+venv/Scripts/activate
 ```
 3. Установите зависимости
 ```
