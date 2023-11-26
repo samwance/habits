@@ -55,7 +55,7 @@ class HabitTestCase(APITestCase):
         )
 
     def test_public_list(self):
-        """Тестирование вывода списка уроков"""
+        """Тестирование вывода списка публичных привычек"""
         response = self.client.get(reverse("habits:habits"))
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
@@ -85,7 +85,7 @@ class HabitTestCase(APITestCase):
         )
 
     def test_retrieve(self):
-        """Тестирование вывода одного урока"""
+        """Тестирование вывода одной привычки"""
         response = self.client.get(
             reverse("habits:habit_retrieve", kwargs={"pk": self.habit.pk})
         )
@@ -146,7 +146,7 @@ class HabitTestCase(APITestCase):
         )
 
     def test_update(self):
-        """Тестирование обновления урока"""
+        """Тестирование обновления привычки"""
         data = {
             "action": "test_upd",
         }
@@ -174,7 +174,7 @@ class HabitTestCase(APITestCase):
         )
 
     def test_delete(self):
-        """Тестирование удаления урока"""
+        """Тестирование удаления привычки"""
         response = self.client.delete(
             reverse("habits:habit_delete", kwargs={"pk": self.habit.pk})
         )
@@ -200,7 +200,7 @@ class HabitValidationTestCase(APITestCase):
         )
 
     def test_frequency_error_create(self):
-        """Тестирование ошибки частоты выполнения привычки"""
+        """Тестирование ошибки переодичности выполнения привычки"""
         data = {
             "user": self.user.pk,
             "place": "test",
