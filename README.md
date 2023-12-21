@@ -15,32 +15,11 @@
 
 ### Инструкция по развертыванию проекта:
 
-Клонирование проекта:
-```
-git clone https://github.com/samwance/habits
-```
-Запуск:
-1. Создайте виртуальное окружение
-```
-python -m venv venv
-```
-2. Активируйте виртуальное окружение
-```
-venv/Scripts/activate
-```
-3. Установите зависимости
-```
-pip install -r requirements.txt
-```
-4. Создайте в папке проекта файл .env, который должен содержать значение переменных из файла .env.sample
-5. Примените миграции
-```
-python manage.py migrate
-```
-6. Запустите проект
-```
-python manage.py runserver
-```
+
+1. Клонируйте репозиторий: ```git clone https://github.com/samwance/habits```
+2. Установите Docker и Docker Compose
+3. Соберите и запустите Docker контейнеры: ```docker-compose up --build```
+4. Перейдите по адресу http://localhost:8000
 Запуск периодической задачи отправки в чат Telegram напоминания о выполнении привычки: 
 ```
 celery -A config worker -l INFO -P eventlet  
